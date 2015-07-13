@@ -1,0 +1,19 @@
+{
+  "name": "truecar",
+  "version": "0.0.1",
+  "authors": [
+    "Peter Carrero <peter.carrero@gmail.com>"
+  ],
+  "description": "Truecar Search Exercise",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "foundation": "~5.5.2"
+  }
+}
