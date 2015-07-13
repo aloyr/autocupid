@@ -16,6 +16,7 @@ This README documents steps necessary to get the application up and running.
 * Install node modules
 * Install bower packages
 
+`
     pip -r requirements.txt
     npm install
     bower install
@@ -23,6 +24,7 @@ This README documents steps necessary to get the application up and running.
     # optionally, run
     gulp watch
     # to have build artefacts automatically regenerate
+`
 
 * Run server with:
 
