@@ -11,10 +11,24 @@ This README documents steps necessary to get the application up and running.
 ### How do I get set up? ###
 
 * Get python 3.4 setup either natively or as a virtualenv
-* Install python dependencies:
-    ~~~
+* Install node
+* Install python dependencies
+* Install node modules
+* Install bower packages
+
     pip -r requirements.txt
-    ~~~
+    npm install
+    bower install
+    gulp
+    # optionally, run
+    gulp watch
+    # to have build artefacts automatically regenerate
+
+* Run server with:
+
+    cd app
+    python server.py
+
 ### Contribution guidelines ###
 
 * Writing tests
