@@ -4,18 +4,15 @@ This README documents steps necessary to get the application up and running.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
+* A day spent playing with Flaks and a new[ish] frontend stack
+* Version: very beta
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Get python 3.4 setup either natively or as a virtualenv
+* Install python dependencies:
+    pip -r requirements.txt
 
 ### Contribution guidelines ###
 
