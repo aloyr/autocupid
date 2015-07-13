@@ -12,6 +12,7 @@ This README documents steps necessary to get the application up and running.
 
 * Get python 3.4 setup either natively or as a virtualenv
 * Install python dependencies:
+
     pip -r requirements.txt
 
 ### Contribution guidelines ###
