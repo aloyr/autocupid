@@ -28,8 +28,10 @@ This README documents steps necessary to get the application up and running.
 
 * Run server with:
 
+~~~~
     cd app
     python server.py
+~~~~
 
 ### Contribution guidelines ###
 
