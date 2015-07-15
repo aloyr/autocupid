@@ -23,7 +23,7 @@ gulp.task('jshint', function () {
 gulp.task('compile-js', function () {
   gulp.src([
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/foundation/js/foundation.js',
+    'bower_components/foundation/js/foundation/foundation.js',
     'bower_components/foundation/js/foundation/foundation.alert.js',
     'source/js/**/*.js'
   ])
