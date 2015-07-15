@@ -3,6 +3,9 @@ app/static/js
 app/static/css
 app/templates
 
+### Sublime Text ###
+*.sublime-*
+
 ### Python venv ###
 venv*
 
