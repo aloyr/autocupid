@@ -1,6 +1,7 @@
 ### build artefacts ###
-app/static/js
 app/static/css
+app/static/fonts
+app/static/js
 app/templates
 
 ### Sublime Text ###
