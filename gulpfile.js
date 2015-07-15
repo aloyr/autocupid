@@ -41,16 +41,28 @@ gulp.task('compile-js', function () {
 
 // compile css
 gulp.task('compile-css', function () {
-  return gulp.src('source/**/*.scss')
+  return gulp.src([
+      'source/**/*.scss', 
+      'bower_components/fontawesome/scss/font-awesome.scss'])
     .pipe(sourcemaps.init())
     .pipe(concat('app.css'))
     // uglify if env = production
     .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
-    .pipe(sass({includePaths: 'bower_components/foundation/scss'}).on('error', sass.logError))
+    .pipe(sass({includePaths: [
+      'bower_components/foundation/scss',
+      'bower_components/fontawesome/scss']})
+    .on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/static/css'))
     .pipe(livereload())
     .pipe(notify({ message: 'Finished compiling scss files' }));
+});
+
+// copy font-awesome fonts
+gulp.task('copy-fontawesome', function () {
+  return gulp.src('bower_components/fontawesome/fonts/**/*.*')
+    .pipe(gulp.dest('app/static/fonts'))
+    .pipe(notify({ message: 'Finished copying a fontawesome file' }));
 });
 
 // copy markup
@@ -58,7 +70,7 @@ gulp.task('copy-markup', function () {
   gulp.src('source/html/**/*.html')
     .pipe(gulp.dest('app/templates'))
     .pipe(livereload())
-    .pipe(notify({ message: 'Finished copying HTML files' }));
+    .pipe(notify({ message: 'Finished copying an HTML file' }));
 });
 
 // watch files
@@ -66,12 +78,14 @@ gulp.task('watch', ['build'], function () {
   notify({ message: 'Gulp started to watch existing files for changes' });
   livereload.listen();
   gulp.watch('source/html/**/*.html', ['copy-markup']);
-  gulp.watch('source/scss/**/*.scss', ['compile-css']);
+  gulp.watch(['source/scss/**/*.scss',
+    'bower_components/fontawesome/scss/font-awesome.scss'], ['compile-css']);
   gulp.watch('source/js/**/*.js', ['jshint', 'compile-js']);
+  gulp.watch('bower_components/fontawesome/fonts/**/*.*', ['copy-fontawesome']);
 });
 
 // build
-gulp.task('build', ['copy-markup', 'compile-css', 'jshint', 'compile-js']);
+gulp.task('build', ['copy-markup', 'compile-css', 'jshint', 'compile-js', 'copy-fontawesome']);
 
 // default task
 gulp.task('default', ['build']);
