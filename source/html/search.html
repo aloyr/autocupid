@@ -1,15 +1,38 @@
 <div class="results">
+	<div class="row">
+		<div class="small-12 columns">
 {% if matches != None %}
-	<table>
+			<table class="results-table">
+			<thead>
+				<tr>
+					<th>Serial Number Pattern</th>
+					<th>Vehicle Trim Id</th>
+					<th>Year</th>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Trim Name</th>
+				</tr>
+			</thead>
+			<tbody>
 	{% for row in matches %}
-	<tr>
+				<tr>
 	  {% for cell in row %}
-	  <td>{{ cell }}</td>
+	  				<td>{{ cell }}</td>
 	  {% endfor %}
-	</tr> {{ '\n' }}
+				</tr> {{ '\n' }}
 	{% endfor %}
-	</table>
+			</tbody>
+			</table>
 {% else %}
-  nothing to see here... move along
+	<div data-alert class="alert-box alert">
+	{% if msg != None %}
+		{{ msg }}
+	{% else %}
+		There are no vehicles that match your search. Please try again.
+	{% endif %}
+	<a href="#" class="close">&times;</a>
+</div>
 {% endif %}
+		</div>
+	</div>
 </div>
