@@ -1,0 +1,10 @@
+#search.clearable{
+  background: url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=) no-repeat right -10px center;
+  transition: background 0.4s;
+  &.x{
+  	background-position: right 10px center;
+  } /* (jQ) Show icon */
+  &.onX{
+  	cursor: pointer;
+  }              /* (jQ) hover cursor style */
+}
