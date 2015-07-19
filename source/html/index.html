@@ -45,6 +45,9 @@
         </div>
       </div>
     </div>
+    {% if request.form.get('search') != None %}
+      {% include "search.html" %}
+    {% endif %}
   </section>
   <!-- scripts -->
   <script src='{{ url_for('static', filename='js/app.js') }}'></script>
