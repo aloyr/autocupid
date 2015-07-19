@@ -1,5 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='//fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="shortcut icon">
+  <script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
+</head>
 <body>
-testing
+  <section class="header">
+    <div class="row">
+      <div class="small-12 columns">
+        <h2 class="header--title text-center">Auto Cupid</h2>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="overlay">
+        <div class="inner">
+          <div class="small-11 small-centered columns">
+            <form method="POST">
+              <h3>Search for your Vehicular Soulmate!</h3>
+              <div class="row collapse">
+                <div class="small-11 columns ">
+                  <input class="clearable" type="text" name="search" placeholder="Search for VSN (format: XXXXXX999999)" value="{{ request.args.get('search') }}">
+                </div>
+                <div class="small-1 columns postfix-radius">
+                  <button class="button radius postfix" type="submit">
+                    <i class="fa fa-search" alt="search"></i>
+                  </button>
+                </div>
+                <div class="small-12 columns">
+                 <div class="description">
+                  Valid VSNs are in the format of six letters (A-Z) followed by six numbers (0-9)
+                 </div>
+                </div>
+              </div>  
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- scripts -->
+  <script src='{{ url_for('static', filename='js/app.js') }}'></script>
+
 </body>
 </html>
