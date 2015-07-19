@@ -26,7 +26,7 @@
               <h3>Search for your Vehicular Soulmate!</h3>
               <div class="row collapse">
                 <div class="small-11 columns ">
-                  <input class="clearable" type="text" name="search" placeholder="Search for VSN (format: XXXXXX999999)" value="{{ request.args.get('search') }}">
+                  <input id="search" class="clearable" type="text" name="search" placeholder="Search for VSN (format: XXXXXX999999)" value="{{ request.form.get('search') |safe if request.form.get('search') != None }}" autofocus>
                 </div>
                 <div class="small-1 columns postfix-radius">
                   <button class="button radius postfix" type="submit">
