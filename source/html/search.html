@@ -1,0 +1,15 @@
+<div class="results">
+{% if matches != None %}
+	<table>
+	{% for row in matches %}
+	<tr>
+	  {% for cell in row %}
+	  <td>{{ cell }}</td>
+	  {% endfor %}
+	</tr> {{ '\n' }}
+	{% endfor %}
+	</table>
+{% else %}
+  nothing to see here... move along
+{% endif %}
+</div>
