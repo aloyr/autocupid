@@ -43,7 +43,7 @@ class VSN:
 		"""crude prevention of bobby tables attack
 		   https://xkcd.com/327/
 		"""
-		if ((len(vsnid) == 12) and (self.vsn_pattern.match(vsnid))):
+		if ((len(vsnid) == 0) or ((len(vsnid) == 12) and (self.vsn_pattern.match(vsnid)))):
 			result = True
 		else:
 			result = False
