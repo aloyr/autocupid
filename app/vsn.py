@@ -16,12 +16,6 @@ class VSN:
 			for row in data:
 				self.vsn.append([re.compile(row[0].replace('*','.'), re.IGNORECASE)] + row)
 
-	def getTable(self):
-		output = ''
-		for row in self.vsn:
-			output += str(row[1:]) + ' <br />\n'
-		return output
-
 	def search(self, vsnid):
 		"""return list of matching VSNs
 		   uses levenshtein comparison similarly to php
