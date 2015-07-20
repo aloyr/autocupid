@@ -15,3 +15,14 @@ $(function() {
 		$('#search').addClass('x');
 	}
 });
+
+$(function() {
+	$('#search').on('input', function() {
+		$.get('/search/' + $('#search').val(), function(data){
+			$('.results').html(data);
+		});
+	});
+	$('#search-vsn').submit(function(e) {
+		e.preventDefault()
+	})
+});

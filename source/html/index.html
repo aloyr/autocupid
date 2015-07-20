@@ -22,11 +22,11 @@
         <div class="overlay">
         <div class="inner">
           <div class="small-11 small-centered columns">
-            <form method="POST">
+            <form method="POST" id="search-vsn">
               <h3>Search for your Vehicular Soulmate!</h3>
               <div class="row collapse">
                 <div class="small-11 columns ">
-                  <input id="search" class="clearable" type="text" name="search" placeholder="Search for VSN (format: XXXXXX999999)" value="{{ vsnid |safe if vsnid != None }}" autofocus>
+                  <input id="search" class="clearable" type="text" name="search" placeholder="Search for VSN (format: XXXXXX999999)" value="{{ vsnid |safe if vsnid != None }}" autofocus maxlength="12">
                 </div>
                 <div class="small-1 columns postfix-radius">
                   <button class="button radius postfix" type="submit">
@@ -45,9 +45,11 @@
         </div>
       </div>
     </div>
+    <div class="results">
     {% if vsnid != None %}
       {% include "search.html" %}
     {% endif %}
+    </div>
   </section>
   <!-- scripts -->
   <script src='{{ url_for('static', filename='js/app.js') }}'></script>

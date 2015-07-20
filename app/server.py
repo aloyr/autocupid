@@ -4,6 +4,7 @@ from vsn import VSN
 from string import ascii_letters, digits
 
 app = Flask(__name__)
+# regenerate the secret_key every time python is realoaded
 app.secret_key = ''.join([random.choice(ascii_letters+digits) for i in range(32)])
 
 vsn = VSN()
@@ -13,6 +14,8 @@ def index():
 	matches = None
 	msg = None
 	vsnid = None
+	# handles refresh (or f5) after form is submitted
+	# post/redirect/get pattern: https://en.wikipedia.org/wiki/Post/Redirect/Get
 	vsnid_post = request.form.get('search')
 	if (vsnid_post != None):
 		session['vsnid'] = vsnid_post
