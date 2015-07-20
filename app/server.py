@@ -26,14 +26,6 @@ def index():
 			msg = 'Wrong VSN format entered. Please try again.'
 	return render_template('index.html', matches=matches, msg=msg, session=str(session), vsnid=vsnid)
 
-@app.route('/welcome')
-def welcome():
-	return render_template('welcome.html')
-
-@app.route('/data')
-def datatest():
-	return vsn.getTable()
-
 @app.route('/search/<vsnid>')
 def searchVSN(vsnid):
 	matches = None
