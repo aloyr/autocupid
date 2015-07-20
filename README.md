@@ -17,7 +17,7 @@ This README documents steps necessary to get the application up and running.
 * Install bower packages
 
 ~~~~
-    pip -r requirements.txt
+    pip install -r requirements.txt
     npm install
     bower install
     gulp
